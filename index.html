@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Minesweeper</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+
+<body>
+<div class="container">
+
+    <h2> Chess Game </h2>
+
+    <div class="row">
+        <div class="col-md-3  panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <input id="difficulty-level" value="easy" type ="hidden"/>
+                    <div class="col-md-6">
+                        <!-- <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle btn-success" data-toggle="dropdown">
+                                Board Size <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="javascript:setLevel('easy')">Easy</a></li>
+                                <li><a href="javascript:setLevel('medium')">Medium</a></li>
+                                <li><a href="javascript:setLevel('hard')">Hard</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+                        <button  type="button" id ="bn-reset" class="btn btn-danger bn-reset" onclick = "chess.restart()" name="bn-reset">Reset </button>  
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="list-group">
+                <li class="list-group-item"><span class="glyphicon glyphicon-time "></span>   Timer<span class="badge"><div id="timer"></div></span></li>
+                
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+
+            <div id="game-board" class="game-board" style="cursor:pointer">
+                
+            </div>
+        </div>
+    </div>    
+</div>
+</div>
+
+<script src="./js/jquery.js"></script> <!-- for bootstrap -->
+<script src="./js/bootstrap.js"></script>
+<script type="text/javascript" src="./src/app.js"></script>
+<script type="text/javascript">
+
+ $(document).ready(function() {
+            boardElement = $("#game-board");
+            var chess = new Game(boardElement);
+        });
+</script>
+<style type="text/css">
+
+#game-board{
+
+padding-left: 20px;
+
+
+}
+
+#game-board .row span{
+
+    width: 50px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    font-size: 40px;
+    font-style: bold;
+}
+
+.dark {
+
+
+    background-color: gray;
+
+}
+
+
+.light{
+
+    background-color: white;
+
+}
+
+#board {
+    height: 800px;
+    width: 800px;
+}
+ 
+#board .column {
+    height: 100px;
+    width: 100px;
+    background: #F0FFFF;
+    float: left;
+    font-size: 90px;
+    
+
+}
+ 
+#board .column.dark {
+    background: #99CCFF;
+}
+ 
+#board .column div {
+    height: 100px;
+    width: 100px;
+}
+
+
+</style>
+  
+</body></html>
